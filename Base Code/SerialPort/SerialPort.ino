@@ -32,23 +32,23 @@ void loop() {
         }
         //change speed
         break;
-      case 50: //Incline Up
+      case 50: //Incline up
         if (incline == false) {
           incline = true;
           setIncline(incline);
+          setMotorSpeed(spd);
         }
-        //change speed
         break;
       case 51: //Incline Down
         if (incline = true) {
           incline = false;
           setIncline(incline);
+          setMotorSpeed(spd);
         }
-        //change speed
         break;
     }
   }
-  setMotorSpeed(spd);
+  
 }
 
 void setMotorSpeed(int spd) {
