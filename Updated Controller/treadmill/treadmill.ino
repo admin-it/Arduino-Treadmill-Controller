@@ -65,13 +65,17 @@ void loop()
       case 50:
         up = true;
         down = false;
-        inclineCount = 0; 
+        inclineCount = inclineCount - 11; 
       break;
 
       case 51:
         up = false;
         down = true;
-        inclineCount = 0; 
+        inclineCount = inclineCount - 11; 
+      break;
+      
+      case 52:
+        spd = 0.0; 
       break;
       default:
         //Serial.print("invalid command");
@@ -85,7 +89,7 @@ void loop()
     Serial.print("\n");
 }
 
-if(inclineCount <= 10){
+if(inclineCount <= 20){
  // Serial.print("in if");
   setIncline(up,down);
   inclineCount++;
@@ -119,7 +123,7 @@ void setIncline(boolean up, boolean down){
     digitalWrite(inDown,HIGH);
     
   }
-  if(inclineCount == 10){
+  if(inclineCount == 20){
     digitalWrite(inUpRelay,LOW); 
     digitalWrite(inDownRelay,LOW);
     digitalWrite(inUp,LOW);
